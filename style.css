@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro&display=swap');
 
-
 *{
     margin:0;
     padding:0;
@@ -188,7 +187,6 @@ section h2{
 }
 
 .portfolio-img{
-    background:url(https://picsum.photos/200);
     width:200px;
     height:200px;
 	padding:1rem;
@@ -196,6 +194,18 @@ section h2{
 	font-size:10rem;
 	text-align:center;
 	color:#FFF6E8;
+}
+
+.portfolio-item-1 .portfolio-img{
+    background:url(https://picsum.photos/id/926/200/200);
+}
+
+.portfolio-item-2 .portfolio-img{
+    background:url(https://picsum.photos/id/197/200/200);
+}
+
+.portfolio-item-3 .portfolio-img{
+    background:url(https://picsum.photos/id/492/200/200);
 }
 
 /*** ANIMATIONS ***/
@@ -522,5 +532,9 @@ section h2{
 
     .contact-form{
         margin-top:1rem;
+        width:150%;
+    }
+    .contact-form textarea{
+        width:100%;
     }
 }

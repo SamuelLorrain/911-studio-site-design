@@ -1,6 +1,5 @@
+/** CANVAS **/
 const canvas = document.querySelector('#waveform')
-const textarea = document.querySelector("textarea");
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -8,14 +7,18 @@ if(!canvas.getContext){
     console.log("unable to get context")
 }
 
-
 let c = canvas.getContext('2d')
 
 let freq = 0.01;
 let t = 0;
 let incrementFreq = false;
 let decrementFreq = false;
+
+//Init the waveform and the animation
 function initWaveform(){
+    if(window.innerWidth < 700){
+        document.querySelector('.home').classList.remove("home-animation-in");
+    }
     waveform(t);
     animate();
 }
@@ -43,9 +46,15 @@ function animate(){
             decrementFreq = false;
         }
     }
+    //detect orientation change
+    if(canvas.width != window.innerWidth){
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
     requestAnimationFrame(animate);
 }
 
+//Compute the waveform
 function waveform(t, color, factor,){
     c.strokeStyle = color;
     c.lineWidth = 2;
@@ -58,11 +67,14 @@ function waveform(t, color, factor,){
     c.stroke();
 }
 
+
+/** Site logic **/
+// Handle menu
 button = document.querySelectorAll(".menuItem");
 sections = document.querySelectorAll("section");
 button.forEach(i => {
     i.addEventListener('click', function(e){
-        incrementFreq = true;
+        incrementFreq = true; //change frequency of the waveform
         //clear classes
         button.forEach(k => {
             k.classList.remove("active-item");
@@ -83,6 +95,7 @@ button.forEach(i => {
             }
         });
         e.target.classList.add("active-item");
+
         //clear focus on button (bad looking...),
         //put it in textarea instead
         textarea.focus();
@@ -91,6 +104,8 @@ button.forEach(i => {
     });
 });
 
+
+// Solve some responsivness problems
 document.querySelector("form").addEventListener('submit', function(e){
     e.preventDefault();
     textarea.value = "Submitted!";
@@ -109,11 +124,3 @@ portfolio.forEach((i) => i.addEventListener('mouseout', function(e){
         i.classList.remove("fa-play-circle");
     }
 }));
-
-//detect innerWidth change (orientation hack)
-setInerval(1500, function(e){
-    if(canvas.width != window.innerWidth){
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-    }
-})
