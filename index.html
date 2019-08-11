@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf8"/>
     <title>911-Studio</title>
+	<link defer rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css"/>
     <link rel="icon" type="image/png" href="favicon.png">
     <link rel="canonical" href="https://adresse_canonique.com" />
@@ -13,22 +14,59 @@
     <canvas id="waveform"></canvas>
     <div class="header">
         <div class="menu">
-            <button class="menuItem active">Home</button>
+            <button class="menuItem active-item">Home</button>
             <button class="menuItem">About</button>
             <button class="menuItem">Portfolio</button>
             <button class="menuItem">Contact</button>
         </div>
     </div>
-    <section class="home">
+    <section class="home home-animation-in">
             <h1>Welcome to<br/><span class="logo">911-Studio</span></h1>
             <h2>we make audio, swift.</h2>
     </section>
-        <div class="about">
+    <section class="about hidden">
+        <h1>Our goal</h1>
+        <div class="about-content">
+            <h3>911 Studio is a fictive studio.<br/>We can record, mix and masterize<br/> all
+            your thought !</h3>
+            <p>We got 3 studios rooms with high end machines, including:</p>
+            <ul>
+                <li>Old Neve Consoles</li>
+                <li>LA-2A and Urei 1176 Compressors</li>
+                <li>Manley Massive Passive</li>
+                <li>Waves Mercury plugins bundle</li>
+            </ul>
         </div>
-        <div class="portfolio">
+    </section>
+    <section class="portfolio hidden">
+		<h1>Listen !</h1>
+		<div class="portfolio-tile">
+			<div class="portfolio-item portfolio-item-1">
+				<div class="portfolio-img"></div>
+				<div class="portfolio-title">Bottles - Sailing of the street</div>
+				<div class="portfolio-content">The new pop-rock sound</div>
+			</div>
+			<div class="portfolio-item portfolio-item-2">
+				<div class="portfolio-img"></div>
+				<div class="portfolio-title">The DX53's</div>
+				<div class="portfolio-content">Huge sound</div>
+			</div>
+			<div class="portfolio-item portfolio-item-3">
+				<div class="portfolio-img"></div>
+				<div class="portfolio-title">Frequency Testing CD</div>
+				<div class="portfolio-content">The best out there</div>
+			</div>
+		</div>
+    </section>
+    <section class="contact hidden">
+        <div class="contact-call">
+            <h1>Contact us!</h1>
         </div>
-        <div class="contact">
-        </div>
+        <form class="contact-form">
+                <input type="email" placeholder="example@example.com"/>
+                <textarea placeholder="your project"></textarea>
+                <button>Submit</button>
+        </form>
     </section>
     <script src="script.js"></script>
 </body>

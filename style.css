@@ -1,16 +1,45 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Source+Sans+Pro&display=swap');
 
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:'Source Sans Pro', Arial,Helvetica,sans-serif;
+    color:#222;
+}
+
+body{
+    overflow:hidden;
+}
+
+.hidden{
+    visibility:hidden;
 }
 
 .header{
     width:100vw;
     height:10vh;
-    overflow:hidden;
+}
+
+p{
+    font-size:1.3rem;
+    margin-top:1rem;
+    font-family:'Source Sans Pro', Arial,Helvetica,sans-serif;
+}
+
+ul{
+    margin-top:1rem;
+}
+
+li{
+    font-size:1.3rem;
+    list-style-type:square;
+    list-style-position:inside;
+}
+
+h3{
+    font-size:1.5rem;
 }
 
 .menu{
@@ -32,10 +61,10 @@
 }
 
 .menuItem:hover{
-    color:white;
+    color:#ff7200;
 }
 
-.active{
+.active-item{
     color:#ff7200;
 }
 
@@ -48,7 +77,6 @@
     background:#ff7200;
 }
 
-
 #waveform{
     z-index:-1;
     position:fixed;
@@ -58,11 +86,11 @@
     background:#fff6e8;
 }
 
-
+/*** content/section ***/
 section{
-    margin-left:10%;
-    margin-top:10%;
-    width:50%;
+    position:fixed;
+    top:25%;
+    left:15%;
 }
 
 section h1{
@@ -80,4 +108,419 @@ section h2{
     font-size:2.5rem;
     letter-spacing:.8rem;
     font-weight:500;
+}
+
+/** contact **/
+.contact{
+    display:flex;
+    width:65%;
+    justify-content:space-between;
+}
+
+.contact-form{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.contact-form input{
+    padding:.5rem;
+    font-size:1.25rem;
+    margin-bottom:1rem;
+    border:1px solid #aaa;
+}
+
+.contact-form textarea{
+    padding:.5rem;
+    resize:none;
+    font-size:1.25rem;
+    width:20rem;
+    height:20rem;
+    margin-bottom:1rem;
+    border:1px solid #aaa;
+}
+
+.contact-form button{
+    padding:0.5rem;
+    font-size:1.25rem;
+    background:white;
+    border:1px solid #aaa;
+}
+
+.contact-form button:hover{
+    color:#ff7200;
+}
+
+.contact-form button:active{
+    background:#eee;
+    border:1px solid #333;
+}
+
+/** about **/
+.about-content{
+    margin:1rem 0.5rem;
+    border-radius:5px;
+}
+
+/** portfolio **/
+.portfolio-tile{
+	position:fixed;
+    top:25%;
+    left:45%;
+    display:flex;
+    justify-content:space-between;
+}
+
+.portfolio-item{
+	background:#FFF6E8;
+	border-radius:5px;
+	padding:1rem;
+	margin-left:1rem;
+	height:300px;
+}
+
+.portfolio-item-1{
+	margin-top:200px;
+}
+
+.portfolio-item-2{
+	margin-top:100px;
+}
+
+.portfolio-img{
+    background:url(https://picsum.photos/200);
+    width:200px;
+    height:200px;
+	padding:1rem;
+	border-radius:5px;
+	font-size:10rem;
+	text-align:center;
+	color:#FFF6E8;
+}
+
+/*** ANIMATIONS ***/
+/** home **/
+.home-animation-out h1{
+    animation-name:home-animation-out-h1;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.home-animation-out h2{
+    animation-name:home-animation-out-h2;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.home-animation-in h1{
+    animation-name:home-animation-in-h1;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.home-animation-in h2{
+    animation-name:home-animation-in-h2;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+@keyframes home-animation-out-h1{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes home-animation-out-h2{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes home-animation-in-h1{
+    0%{
+        transform: translateY(-100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes home-animation-in-h2{
+    0%{
+        transform: translateY(100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+/** contact **/
+.contact-animation-in .contact-form{
+    animation-name:contact-animation-in-contact-form;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.contact-animation-in .contact-call{
+    animation-name:contact-animation-in-contact-call;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.contact-animation-out .contact-call{
+    animation-name:contact-animation-out-contact-call;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.contact-animation-out .contact-form{
+    animation-name:contact-animation-out-contact-form;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+@keyframes contact-animation-in-contact-call{
+    0%{
+        transform: translateY(-100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes contact-animation-in-contact-form{
+    0%{
+        transform: translateY(100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes contact-animation-out-contact-call{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes contact-animation-out-contact-form{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
+
+/* about */
+.about-animation-in{
+    animation-name:about-animation-in;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.about-animation-out{
+    animation-name:about-animation-out;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+@keyframes about-animation-in{
+    0%{
+        transform: translateY(-100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes about-animation-out{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100vh);
+    }
+}
+
+/** portfolio **/
+.portfolio-animation-in h1{
+    animation-name:portfolio-animation-in;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.portfolio-animation-out h1{
+    animation-name:portfolio-animation-out;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+@keyframes portfolio-animation-in{
+    0%{
+        transform: translateY(-100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes portfolio-animation-out{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-100vh);
+    }
+}
+
+
+.portfolio-animation-in .portfolio-tile{
+    animation-name:portfolio-tile-animation-in;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+.portfolio-animation-out .portfolio-tile{
+    animation-name:portfolio-tile-animation-out;
+    animation-duration:1s;
+    animation-iteration-count:1;
+    animation-timing-function:ease-in;
+    animation-fill-mode:forwards;
+}
+
+
+@keyframes portfolio-tile-animation-in{
+    0%{
+        transform: translateY(100vh);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+@keyframes portfolio-tile-animation-out{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(100vh);
+    }
+}
+
+/*** media queries ***/
+@media screen and (min-width:780px) and (max-width:1024px){
+    .portfolio-item-3{
+        visibility:hidden;
+    }
+}
+
+@media screen and (max-width:780px){
+    body{
+        overflow-y:scroll;
+        background:#fff6e8;
+    }
+    .header{
+        display:none;
+    }
+    section{
+        padding-left:1rem;
+        margin-top:15vh;
+        margin-bottom:20vh;
+        position:static;
+    }
+    section h1{
+        font-size:2.5rem;
+    }
+    section h2{
+        font-size:2rem;
+    }
+    .hidden{
+        visibility:visible;
+    }
+    .portfolio-tile{
+        margin-top:1rem;
+        position:static;
+        display:flex;
+        flex-direction:column;
+    }
+
+    .portfolio-img{
+        display:none;
+    }
+
+    .portfolio-item{
+        border-radius:5px;
+        border:1px solid #ff7200;
+        padding:1rem;
+        width:75%;
+        margin-bottom:2rem;
+        height:inherit;
+    }
+
+    .portfolio-item:hover {
+        background:#efe7da;
+        cursor:pointer;
+    }
+
+    .portfolio-title, .portfolio-content{
+        color:#ff7200;
+    }
+
+    .portfolio-item-1{
+        margin-top:0px;
+    }
+
+    .portfolio-item-2{
+        margin-top:0px;
+    }
+
+    #waveform{
+        z-index:-1;
+        position:fixed;
+        top:30vh;
+        left:0;
+    }
+
+    .contact{
+        display:block;
+    }
+
+    .contact-form{
+        margin-top:1rem;
+    }
 }
